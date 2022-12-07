@@ -2260,6 +2260,11 @@ declare namespace monaco.editor {
 		 */
 		ignoreTrimWhitespace: boolean;
 		/**
+		 * When set to true, the diff should ignore ALL whitespace changes,
+		 * including newlines and inter-line spaces.
+		 */
+		ignoreAllWhitespace: boolean;
+		/**
 		 * A diff computation should throw if it takes longer than this value.
 		 */
 		maxComputationTimeMs: number;
@@ -3675,6 +3680,11 @@ declare namespace monaco.editor {
 		 * Defaults to true.
 		 */
 		ignoreTrimWhitespace?: boolean;
+		/**
+		 * Compute the diff by ignoring ALL whitespace
+		 * Defaults to false.
+		 */
+		ignoreAllWhitespace?: boolean;
 		/**
 		 * Render +/- indicators for added/deleted changes.
 		 * Defaults to true.

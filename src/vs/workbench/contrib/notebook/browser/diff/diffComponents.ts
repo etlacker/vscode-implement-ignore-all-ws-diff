@@ -541,6 +541,7 @@ abstract class AbstractElementRenderer extends Disposable {
 				readOnly: false,
 				originalEditable: false,
 				ignoreTrimWhitespace: false,
+				ignoreAllWhitespace: false,
 				automaticLayout: false,
 				dimension: {
 					height: this.cell.layoutInfo.metadataHeight,
@@ -653,6 +654,7 @@ abstract class AbstractElementRenderer extends Disposable {
 					overflowWidgetsDomNode: this.notebookEditor.getOverflowContainerDomNode(),
 					readOnly: true,
 					ignoreTrimWhitespace: false,
+					ignoreAllWhitespace: false,
 					automaticLayout: false,
 					dimension: {
 						height: Math.min(OUTPUT_EDITOR_HEIGHT_MAGIC, this.cell.layoutInfo.rawOutputHeight || lineHeight * lineCount),
@@ -1459,6 +1461,7 @@ export class ModifiedElement extends AbstractElementRenderer {
 					overflowWidgetsDomNode: this.notebookEditor.getOverflowContainerDomNode(),
 					readOnly: true,
 					ignoreTrimWhitespace: false,
+					ignoreAllWhitespace: false,
 					automaticLayout: false,
 					dimension: {
 						height: OUTPUT_EDITOR_HEIGHT_MAGIC,

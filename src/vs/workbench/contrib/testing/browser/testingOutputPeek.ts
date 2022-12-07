@@ -833,6 +833,7 @@ const diffEditorOptions: IDiffEditorConstructionOptions = {
 	isInEmbeddedEditor: true,
 	renderOverviewRuler: false,
 	ignoreTrimWhitespace: false,
+	ignoreAllWhitespace: false,
 	renderSideBySide: true,
 	originalAriaLabel: localize('testingOutputExpected', 'Expected result'),
 	modifiedAriaLabel: localize('testingOutputActual', 'Actual result'),

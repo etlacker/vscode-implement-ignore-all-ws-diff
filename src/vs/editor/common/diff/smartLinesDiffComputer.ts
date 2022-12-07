@@ -17,6 +17,7 @@ export class SmartLinesDiffComputer implements ILinesDiffComputer {
 		const diffComputer = new DiffComputer(originalLines, modifiedLines, {
 			maxComputationTime: options.maxComputationTimeMs,
 			shouldIgnoreTrimWhitespace: options.ignoreTrimWhitespace,
+			shouldIgnoreAllWhitespace: options.ignoreAllWhitespace,
 			shouldComputeCharChanges: true,
 			shouldMakePrettyDiff: true,
 			shouldPostProcessCharChanges: true,
@@ -418,6 +419,7 @@ export interface IDiffComputerOpts {
 	shouldComputeCharChanges: boolean;
 	shouldPostProcessCharChanges: boolean;
 	shouldIgnoreTrimWhitespace: boolean;
+	shouldIgnoreAllWhitespace: boolean;
 	shouldMakePrettyDiff: boolean;
 	maxComputationTime: number;
 }
@@ -427,6 +429,7 @@ export class DiffComputer {
 	private readonly shouldComputeCharChanges: boolean;
 	private readonly shouldPostProcessCharChanges: boolean;
 	private readonly shouldIgnoreTrimWhitespace: boolean;
+	private readonly shouldIgnoreAllWhitespace: boolean;
 	private readonly shouldMakePrettyDiff: boolean;
 	private readonly originalLines: string[];
 	private readonly modifiedLines: string[];
@@ -439,6 +442,7 @@ export class DiffComputer {
 		this.shouldComputeCharChanges = opts.shouldComputeCharChanges;
 		this.shouldPostProcessCharChanges = opts.shouldPostProcessCharChanges;
 		this.shouldIgnoreTrimWhitespace = opts.shouldIgnoreTrimWhitespace;
+		this.shouldIgnoreAllWhitespace = opts.shouldIgnoreAllWhitespace;
 		this.shouldMakePrettyDiff = opts.shouldMakePrettyDiff;
 		this.originalLines = originalLines;
 		this.modifiedLines = modifiedLines;

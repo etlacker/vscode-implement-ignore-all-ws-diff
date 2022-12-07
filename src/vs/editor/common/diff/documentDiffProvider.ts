@@ -33,6 +33,12 @@ export interface IDocumentDiffProviderOptions {
 	ignoreTrimWhitespace: boolean;
 
 	/**
+	 * When set to true, the diff should ignore ALL whitespace changes,
+	 * including newlines.
+	 */
+	ignoreAllWhitespace: boolean;
+
+	/**
 	 * A diff computation should throw if it takes longer than this value.
 	 */
 	maxComputationTimeMs: number;

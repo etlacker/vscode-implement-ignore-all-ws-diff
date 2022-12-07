@@ -127,8 +127,8 @@ export class EditorWorkerService extends Disposable implements IEditorWorkerServ
 		return (canSyncModel(this._modelService, original) && canSyncModel(this._modelService, modified));
 	}
 
-	public computeDirtyDiff(original: URI, modified: URI, ignoreTrimWhitespace: boolean): Promise<IChange[] | null> {
-		return this._workerManager.withWorker().then(client => client.computeDirtyDiff(original, modified, ignoreTrimWhitespace));
+	public computeDirtyDiff(original: URI, modified: URI, ignoreTrimWhitespace: boolean, ignoreAllWhitespace: boolean): Promise<IChange[] | null> {
+		return this._workerManager.withWorker().then(client => client.computeDirtyDiff(original, modified, ignoreTrimWhitespace, ignoreAllWhitespace));
 	}
 
 	public computeMoreMinimalEdits(resource: URI, edits: languages.TextEdit[] | null | undefined): Promise<languages.TextEdit[] | undefined> {
@@ -522,9 +522,9 @@ export class EditorWorkerClient extends Disposable implements IEditorWorkerClien
 		});
 	}
 
-	public computeDirtyDiff(original: URI, modified: URI, ignoreTrimWhitespace: boolean): Promise<IChange[] | null> {
+	public computeDirtyDiff(original: URI, modified: URI, ignoreTrimWhitespace: boolean, ignoreAllWhitespace: boolean): Promise<IChange[] | null> {
 		return this._withSyncedResources([original, modified]).then(proxy => {
-			return proxy.computeDirtyDiff(original.toString(), modified.toString(), ignoreTrimWhitespace);
+			return proxy.computeDirtyDiff(original.toString(), modified.toString(), ignoreTrimWhitespace, ignoreAllWhitespace);
 		});
 	}
 

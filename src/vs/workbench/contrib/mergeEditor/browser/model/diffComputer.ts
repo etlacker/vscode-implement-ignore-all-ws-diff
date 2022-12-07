@@ -39,6 +39,7 @@ export class MergeDiffComputer implements IMergeDiffComputer {
 			textModel2.uri,
 			{
 				ignoreTrimWhitespace: false,
+				ignoreAllWhitespace: false,
 				maxComputationTimeMs: 0,
 			},
 			diffAlgorithm,

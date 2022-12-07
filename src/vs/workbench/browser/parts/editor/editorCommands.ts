@@ -68,6 +68,8 @@ export const DIFF_FOCUS_PRIMARY_SIDE = 'workbench.action.compareEditor.focusPrim
 export const DIFF_FOCUS_SECONDARY_SIDE = 'workbench.action.compareEditor.focusSecondarySide';
 export const DIFF_FOCUS_OTHER_SIDE = 'workbench.action.compareEditor.focusOtherSide';
 export const TOGGLE_DIFF_IGNORE_TRIM_WHITESPACE = 'toggle.diff.ignoreTrimWhitespace';
+// TODO: Any of the code in this file (search) needs to be replicated? Is this just display? Day 2?
+// export const TOGGLE_DIFF_IGNORE_ALL_WHITESPACE = 'toggle.diff.ignoreALLWhitespace';
 
 export const SPLIT_EDITOR_UP = 'workbench.action.splitEditorUp';
 export const SPLIT_EDITOR_DOWN = 'workbench.action.splitEditorDown';

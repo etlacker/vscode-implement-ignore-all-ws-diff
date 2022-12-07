@@ -724,6 +724,11 @@ export interface IDiffEditorBaseOptions {
 	 */
 	ignoreTrimWhitespace?: boolean;
 	/**
+	 * Compute the diff by ignoring ALL whitespace, incl. internal spaces.
+	 * Defaults to false.
+	 */
+	ignoreAllWhitespace?: boolean;
+	/**
 	 * Render +/- indicators for added/deleted changes.
 	 * Defaults to true.
 	 */

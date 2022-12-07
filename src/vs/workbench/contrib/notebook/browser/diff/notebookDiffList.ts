@@ -241,6 +241,7 @@ export class CellDiffSideBySideRenderer implements IListRenderer<SideBySideDiffE
 			overflowWidgetsDomNode: this.notebookEditor.getOverflowContainerDomNode(),
 			originalEditable: false,
 			ignoreTrimWhitespace: false,
+			ignoreAllWhitespace: false,
 			automaticLayout: false,
 			dimension: {
 				height: 0,

@@ -526,6 +526,8 @@ appendEditorToolItem(
 	11
 );
 
+// TODO: Changes needed, orig function of this code?
+
 // Diff Editor Title Menu: Toggle Ignore Trim Whitespace (Enabled)
 appendEditorToolItem(
 	{

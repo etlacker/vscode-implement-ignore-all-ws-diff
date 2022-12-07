@@ -436,7 +436,8 @@ export class EditorSimpleWorker implements IRequestHandler, IDisposable {
 		return true;
 	}
 
-	public async computeDirtyDiff(originalUrl: string, modifiedUrl: string, ignoreTrimWhitespace: boolean): Promise<IChange[] | null> {
+	// TODO: Object instead of two bool?
+	public async computeDirtyDiff(originalUrl: string, modifiedUrl: string, ignoreTrimWhitespace: boolean, ignoreAllWhitespace: boolean): Promise<IChange[] | null> {
 		const original = this._getModel(originalUrl);
 		const modified = this._getModel(modifiedUrl);
 		if (!original || !modified) {
@@ -449,6 +450,7 @@ export class EditorSimpleWorker implements IRequestHandler, IDisposable {
 			shouldComputeCharChanges: false,
 			shouldPostProcessCharChanges: false,
 			shouldIgnoreTrimWhitespace: ignoreTrimWhitespace,
+			shouldIgnoreAllWhitespace: ignoreAllWhitespace,
 			shouldMakePrettyDiff: true,
 			maxComputationTime: 1000
 		});

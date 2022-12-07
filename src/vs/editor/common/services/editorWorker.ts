@@ -26,7 +26,7 @@ export interface IEditorWorkerService {
 	computeDiff(original: URI, modified: URI, options: IDocumentDiffProviderOptions, algorithm: DiffAlgorithmName): Promise<IDocumentDiff | null>;
 
 	canComputeDirtyDiff(original: URI, modified: URI): boolean;
-	computeDirtyDiff(original: URI, modified: URI, ignoreTrimWhitespace: boolean): Promise<IChange[] | null>;
+	computeDirtyDiff(original: URI, modified: URI, ignoreTrimWhitespace: boolean, ignoreAllWhitespace: boolean): Promise<IChange[] | null>;
 
 	computeMoreMinimalEdits(resource: URI, edits: TextEdit[] | null | undefined): Promise<TextEdit[] | undefined>;
 
